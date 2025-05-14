@@ -1,16 +1,22 @@
+using System.Collections.Generic;
 using UnityEngine;
+
+[System.Serializable]
+public class Columna{
+
+    public List<GameObject> filas; 
+}
+
+[System.Serializable]
+public class Tablero{
+    public List<Columna> columnas;
+}
 
 public class Controller : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public Tablero board;
+    public GameObject FindObject(int i, int j){
+        return board.columnas[i].filas[j];
     }
 }
