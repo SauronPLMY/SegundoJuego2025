@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7247742983337366132}
   m_Layer: 0
   m_Name: Alfil Blanco
-  m_TagString: Untagged
+  m_TagString: Jugador1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

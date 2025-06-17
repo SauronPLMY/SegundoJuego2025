@@ -1,18 +1,19 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Celda : MonoBehaviour
+public class Celda : MonoBehaviour, IDropHandler
 {
     public ChessPiece ocupante;                
     public Vector2Int posicion;                
     public ChessPiece pieza;                   
 
-    // ¿Está vacía la celda?
+    // Esta vacia la celda?
     public bool EstaVacia()
     {
         return ocupante == null;
     }
 
-    // ¿Hay una pieza enemiga en la celda?
+    // Hay una pieza enemiga en la celda?
     public bool TienePiezaEnemiga(bool soyJugador1)
     {
        
@@ -32,16 +33,21 @@ public class Celda : MonoBehaviour
         ocupante = null;
     }
 
-    // Obtener el índice de columna de esta celda (posición horizontal)
+    // Obtener el indice de columna de esta celda (posicion horizontal)
     public int GetIndiceColumna()
     {
         return transform.GetSiblingIndex();
     }
 
-    // Obtener el índice de fila de esta celda (posición vertical)
+    // Obtener el indice de fila de esta celda (posicion vertical)
     public int GetIndiceFila()
     {
         return transform.parent.GetSiblingIndex();
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        eventData.selectedObject.transform.parent = this.transform;
     }
 }
 
