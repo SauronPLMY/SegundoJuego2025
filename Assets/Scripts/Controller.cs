@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
 public class Columna
 {
-    public List<GameObject> filas;
+    public List<Celda> filas;
 }
 
 [System.Serializable]
@@ -21,7 +23,14 @@ public enum Turno
 
 public class Controller : MonoBehaviour
 {
+
+    [SerializeField] private List<ChessPiece> PrefabsPiezas = new List<ChessPiece>();
+
     public Tablero board;
+    public List<Celda> OpcionesPlayer1;
+
+    public List<Celda> OpcionesPlayer2;
+
     private Turno turnoActual;
 
     public static Controller Instance;
@@ -46,7 +55,7 @@ public class Controller : MonoBehaviour
         Debug.Log("Comienza Jugador 1 (Blancos)");
     }
 
-    public GameObject FindObject(int i, int j)
+    public Celda FindObject(int i, int j)
     {
         return board.columnas[i].filas[j];
     }
@@ -86,5 +95,31 @@ public class Controller : MonoBehaviour
     public Turno GetTurnoActual()
     {
         return turnoActual;
+    }
+
+    public void InstanciarPiezas(bool isPlayer1)
+    {
+        int tamano = 12;
+        for (int times = 0; times < tamano; times++)
+        {
+            // Escoger una pieza aleatoria
+            ChessPiece prefab = PrefabsPiezas[Random.Range(0, PrefabsPiezas.Count)];
+            Celda celda = null;
+            if (isPlayer1)
+            {
+                // Recibir una celda... la primera vacia
+                celda = OpcionesPlayer1.FirstOrDefault(x => x.ocupante == null);
+            }
+            else
+            {
+                // Recibir una celda... la primera vacia
+                celda = OpcionesPlayer2.FirstOrDefault(x => x.ocupante == null);
+            }
+            //Instanciamos la pieza
+            ChessPiece instancia = Instantiate(prefab, celda.transform);
+            //Preparamos la pieza
+            instancia.ActualizarPieza(isPlayer1);
+            celda.ocupante = instancia;
+    }  
     }
 }

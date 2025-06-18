@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tablero Vertical_0: -4569814823152471964
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

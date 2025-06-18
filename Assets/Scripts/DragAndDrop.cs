@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragAndDrop : MonoBehaviour
 {
     private Vector3 startPosition;
     private Turno miTurno;
@@ -10,7 +10,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     void Start()
     {
         
-
+        /*
         // Aqui se determina a que jugador pertenece esta pieza según tag
         if (gameObject.tag == "Jugador1")
         {
@@ -25,7 +25,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         else
         {
             Debug.LogError("La pieza no tiene tag de Jugador1 o Jugador2");
-        }
+        }*/
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -41,17 +41,27 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         startPosition = transform.position;
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public void OnMouseDrag()
     {
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = 10; 
         transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
     }
 
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnMouseUP(PointerEventData eventData)
     {
         Vector3 posicionFinal = transform.position;
 
+        /// Tire un raycast para ver si hay una celda debajo
+        /// rescate la celda => Celda celda =  Raycast // pedirle el componente GetComponent<Celda>();
+        /// si eso es null ... no habia celda
+        /// sino le hago las gestiones de decirle que esa celda es su nueva posicion
+        ///     celda.ocupante = this
+        ///     
+        /// 
+
+
+        /*
         // Asumimos que cada casilla tiene 1 unidad de distancia
         int fila = Mathf.RoundToInt(posicionFinal.y);  // Eje Y es filas
         int columna = Mathf.RoundToInt(posicionFinal.x);  // Eje X es columnas
@@ -66,5 +76,6 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         // Solo para confirmar que se hizo bien  
         Debug.Log("Pieza colocada correctamente");
         Controller.Instance.PiezaColocada(gameObject);
+        */
     }
 }
