@@ -52,7 +52,11 @@ public class Controller : MonoBehaviour
     void Start()
     {
         turnoActual = Turno.Jugador1;
-        Debug.Log("Comienza Jugador 1 (Blancos)");
+        Debug.Log("Comienza Jugador 1");
+
+        // Generamos las piezas random al inicio
+        GenerarPiezasIniciales(true);  // Jugador 1
+        GenerarPiezasIniciales(false); // Jugador 2
     }
 
     public Celda FindObject(int i, int j)
@@ -99,27 +103,64 @@ public class Controller : MonoBehaviour
 
     public void InstanciarPiezas(bool isPlayer1)
     {
-        int tamano = 12;
-        for (int times = 0; times < tamano; times++)
+        int tamano = 10;  // según la regla de 10 piezas por jugador
+
+        for (int i = 0; i < tamano; i++)
         {
-            // Escoger una pieza aleatoria
+            // Escoger una pieza aleatoria de la lista de prefabs
             ChessPiece prefab = PrefabsPiezas[Random.Range(0, PrefabsPiezas.Count)];
+
+            // Obtener la celda libre en la primera fila correspondiente
             Celda celda = null;
             if (isPlayer1)
             {
-                // Recibir una celda... la primera vacia
                 celda = OpcionesPlayer1.FirstOrDefault(x => x.ocupante == null);
             }
             else
             {
-                // Recibir una celda... la primera vacia
                 celda = OpcionesPlayer2.FirstOrDefault(x => x.ocupante == null);
             }
-            //Instanciamos la pieza
-            ChessPiece instancia = Instantiate(prefab, celda.transform);
-            //Preparamos la pieza
+
+            if (celda == null)
+            {
+                Debug.LogWarning("No hay más celdas libres para colocar piezas.");
+                break;
+            }
+
+            // Instanciar la pieza dentro de la celda (para que quede ubicada correctamente)
+            ChessPiece instancia = Instantiate(prefab, celda.transform.position, Quaternion.identity);
+
+            // Actualizar si es jugador 1 o 2 (esto asigna el sprite)
             instancia.ActualizarPieza(isPlayer1);
-            celda.ocupante = instancia;
-    }  
+
+            // Registrar la pieza en la celda y posición
+            celda.OcupaCelda(instancia);
+            instancia.posicionActual = new Vector2Int(celda.GetIndiceColumna(), celda.GetIndiceFila());
+        }
+    }
+
+    public void GenerarPiezasIniciales(bool esJugador1)
+    {
+        int cantidadPiezas = 10;
+
+        List<Celda> listaDeCeldas = esJugador1 ? OpcionesPlayer1 : OpcionesPlayer2;
+
+        for (int i = 0; i < cantidadPiezas; i++)
+        {
+            ChessPiece prefabRandom = PrefabsPiezas[Random.Range(0, PrefabsPiezas.Count)];
+
+            // Buscamos la primera celda vacía en su respectivo panel
+            Celda celdaDisponible = listaDeCeldas.Find(c => c.EstaVacia());
+
+            if (celdaDisponible != null)
+            {
+                // Instanciamos la pieza
+                ChessPiece nuevaPieza = Instantiate(prefabRandom, celdaDisponible.transform.position, Quaternion.identity);
+                nuevaPieza.transform.SetParent(celdaDisponible.transform);
+                nuevaPieza.ActualizarPieza(esJugador1);
+                celdaDisponible.OcupaCelda(nuevaPieza);
+            }
+        }
+
     }
 }
