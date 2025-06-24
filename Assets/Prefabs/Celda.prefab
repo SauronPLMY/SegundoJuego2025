@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4622964454840358830}
   - component: {fileID: 5950319086319531868}
+  - component: {fileID: 1462695502192367166}
   m_Layer: 0
   m_Name: Celda
   m_TagString: Untagged
@@ -87,3 +88,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1462695502192367166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3643283293898196694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed00ed7f45ebe34292604d31cd93130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ocupante: {fileID: 0}
+  posicion: {x: 0, y: 0}
+  pieza: {fileID: 0}

@@ -38,4 +38,14 @@ public abstract class ChessPiece : MonoBehaviour
         celdas[nuevaPos.x, nuevaPos.y].pieza = this;
         transform.position = new Vector3(nuevaPos.x, nuevaPos.y, 0);
     }
+    public bool EsDentroDelTablero(Vector2Int pos)
+    {
+        return pos.x >= 0 && pos.x < 8 && pos.y >= 0 && pos.y < 8;
+    }
+
+    public bool HayPiezaEnemiga(Celda[,] celdas, Vector2Int pos)
+    {
+        ChessPiece pieza = celdas[pos.x, pos.y].pieza;
+        return pieza != null && pieza.esDelJugador1 != esDelJugador1;
+    }
 }

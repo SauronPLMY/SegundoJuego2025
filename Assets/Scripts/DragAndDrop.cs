@@ -6,7 +6,7 @@ public class DragAndDrop : MonoBehaviour
     private Vector3 startPosition;
     private bool estaArrastrando = false;
 
-    private ChessPiece pieza;  
+    private ChessPiece pieza;
     private Camera camara;
 
     private void Start()
@@ -27,6 +27,7 @@ public class DragAndDrop : MonoBehaviour
     {
         if (!estaArrastrando) return;
 
+        gameObject.layer = 2;
         Vector3 mousePos = camara.ScreenToWorldPoint(Input.mousePosition);
         Vector3 nuevaPos = new Vector3(mousePos.x, mousePos.y, transform.position.z) + offset;
         transform.position = nuevaPos;
@@ -35,9 +36,11 @@ public class DragAndDrop : MonoBehaviour
     private void OnMouseUp()
     {
         estaArrastrando = false;
-
         // Hacemos el raycast 2D hacia abajo desde la posición actual
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero);
+        gameObject.layer = 0;
+
+        Debug.Log(hit.transform.name);
 
         if (hit.collider != null && hit.collider.TryGetComponent<Celda>(out Celda celda))
         {

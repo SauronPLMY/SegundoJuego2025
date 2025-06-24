@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8430367709041348962}
   - component: {fileID: 3209954586742561904}
   - component: {fileID: 460549105920228631}
+  - component: {fileID: 4741321439341577329}
+  - component: {fileID: 2563281946757649937}
   m_Layer: 0
   m_Name: Alfil
   m_TagString: Untagged
@@ -28,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.060853, y: -5.0556397, z: -0.14507622}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.5106034, y: 4.5106034, z: 4.5106034}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,3 +107,52 @@ MonoBehaviour:
   imagenes:
   - {fileID: 7560534232159598683, guid: 7c7e3d158b854a04db98d2d45cdca0cb, type: 3}
   - {fileID: -6414592721767173361, guid: 225fa643aa82ad745aa4dc6af2228ca9, type: 3}
+--- !u!70 &4741321439341577329
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669147804923768718}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.18, y: 0.19}
+  m_Direction: 0
+--- !u!114 &2563281946757649937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669147804923768718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eef33149efe23e4e82289172685926e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

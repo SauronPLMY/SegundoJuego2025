@@ -36,13 +36,14 @@ public class Celda : MonoBehaviour, IDropHandler
     // Obtener el indice de columna de esta celda (posicion horizontal)
     public int GetIndiceColumna()
     {
-        return transform.GetSiblingIndex();
+         return transform.parent.GetSiblingIndex();
+        
     }
 
     // Obtener el indice de fila de esta celda (posicion vertical)
     public int GetIndiceFila()
     {
-        return transform.parent.GetSiblingIndex();
+       return transform.GetSiblingIndex();
     }
 
     public void OnDrop(PointerEventData eventData)

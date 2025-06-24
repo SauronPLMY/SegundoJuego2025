@@ -26,7 +26,10 @@ public class Controller : MonoBehaviour
 
     [SerializeField] private List<ChessPiece> PrefabsPiezas = new List<ChessPiece>();
 
-    public Tablero board;
+    public Tablero board =new Tablero();
+
+    //[Header("Spawn Section")]
+    int cantidadPiezas = 10;
     public List<Celda> OpcionesPlayer1;
 
     public List<Celda> OpcionesPlayer2;
@@ -41,7 +44,7 @@ public class Controller : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);  // Opcional: si quieres que persista entre escenas
+            //DontDestroyOnLoad(gameObject);  // Opcional: si quieres que persista entre escenas
         }
         else
         {
@@ -141,7 +144,7 @@ public class Controller : MonoBehaviour
 
     public void GenerarPiezasIniciales(bool esJugador1)
     {
-        int cantidadPiezas = 10;
+        
 
         List<Celda> listaDeCeldas = esJugador1 ? OpcionesPlayer1 : OpcionesPlayer2;
 
