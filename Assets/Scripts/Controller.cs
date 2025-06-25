@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -17,34 +16,30 @@ public class Tablero
 
 public enum Turno
 {
-    Jugador1,  // Blancos
-    Jugador2   // Negros
+    Jugador1,
+    Jugador2
 }
 
 public class Controller : MonoBehaviour
 {
-
     [SerializeField] private List<ChessPiece> PrefabsPiezas = new List<ChessPiece>();
 
-    public Tablero board =new Tablero();
+    public Tablero board = new Tablero();
 
-    //[Header("Spawn Section")]
     int cantidadPiezas = 10;
     public List<Celda> OpcionesPlayer1;
-
     public List<Celda> OpcionesPlayer2;
 
-    private Turno turnoActual;
+    private List<ChessPiece> piezasJugador1 = new List<ChessPiece>();
+    private List<ChessPiece> piezasJugador2 = new List<ChessPiece>();
 
     public static Controller Instance;
 
-    // Singleton
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            //DontDestroyOnLoad(gameObject);  // Opcional: si quieres que persista entre escenas
         }
         else
         {
@@ -54,12 +49,10 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
-        turnoActual = Turno.Jugador1;
         Debug.Log("Comienza Jugador 1");
 
-        // Generamos las piezas random al inicio
-        GenerarPiezasIniciales(true);  // Jugador 1
-        GenerarPiezasIniciales(false); // Jugador 2
+        GenerarPiezasIniciales(true);
+        GenerarPiezasIniciales(false);
     }
 
     public Celda FindObject(int i, int j)
@@ -67,103 +60,98 @@ public class Controller : MonoBehaviour
         return board.columnas[i].filas[j];
     }
 
-    public bool EsTurnoDelJugador(Turno jugador)
+    // Método llamado al colocar una pieza en el tablero
+    public void PiezaColocada(GameObject piezaGO)
     {
-        return turnoActual == jugador;
-    }
+        ChessPiece pieza = piezaGO.GetComponent<ChessPiece>();
 
-    // Logica cuando el jugador coloca una pieza
-    public void PiezaColocada(GameObject pieza)
-    {
-        Debug.Log("Pieza colocada por " + turnoActual);
-        AvanzarPiezas(); // (Por ahora solo testing, despues implementar avance real)
-        CambiarTurno();
-    }
-
-    private void CambiarTurno()
-    {
-        if (turnoActual == Turno.Jugador1)
+        if (pieza.esDelJugador1 && !piezasJugador1.Contains(pieza))
         {
-            turnoActual = Turno.Jugador2;
-            Debug.Log("Turno de Jugador 2 (Negros)");
+            piezasJugador1.Add(pieza);
+        }
+        else if (!pieza.esDelJugador1 && !piezasJugador2.Contains(pieza))
+        {
+            piezasJugador2.Add(pieza);
+        }
+
+        Debug.Log("Pieza colocada - moviendo todas las piezas simple");
+
+        // Mueve las piezas blancas hacia arriba (+1 en y)
+        foreach (ChessPiece p in piezasJugador1.ToList())
+        {
+            MoverUnaCasillaAdelante(p, +1);
+        }
+
+        // Mueve las piezas negras hacia abajo (-1 en y)
+        foreach (ChessPiece p in piezasJugador2.ToList())
+        {
+            MoverUnaCasillaAdelante(p, -1);
+        }
+    }
+
+    // Mueve una pieza una casilla adelante en la dirección indicada, si está libre
+    private void MoverUnaCasillaAdelante(ChessPiece pieza, int direccionFila)
+    {
+        Vector2Int pos = pieza.posicionActual;
+        int nuevaFila = pos.y + direccionFila;
+
+        // Validar que no se salga del tablero
+        if (nuevaFila < 0 || nuevaFila >= board.columnas[0].filas.Count)
+        {
+            Debug.Log($"{pieza.name} no puede avanzar más");
+            return;
+        }
+
+        Celda origen = FindObject(pos.x, pos.y);
+        Celda destinoCelda = FindObject(pos.x, nuevaFila);
+
+        if (destinoCelda.ocupante == null)
+        {
+            origen.VaciarCelda();
+            destinoCelda.OcupaCelda(pieza);
+
+            pieza.transform.position = destinoCelda.transform.position;
+            pieza.posicionActual = new Vector2Int(pos.x, nuevaFila);
+
+            Debug.Log($"{pieza.name} avanzó una casilla a ({pos.x}, {nuevaFila})");
         }
         else
         {
-            turnoActual = Turno.Jugador1;
-            Debug.Log("Turno de Jugador 1 (Blancos)");
+            Debug.Log($"{pieza.name} no puede avanzar a casilla ocupada ({pos.x}, {nuevaFila})");
         }
     }
 
-    private void AvanzarPiezas()
-    {
-        Debug.Log("Las piezas avanzan y revisan si pueden comer.");
-    }
-
-    public Turno GetTurnoActual()
-    {
-        return turnoActual;
-    }
-
-    public void InstanciarPiezas(bool isPlayer1)
-    {
-        int tamano = 10;  // según la regla de 10 piezas por jugador
-
-        for (int i = 0; i < tamano; i++)
-        {
-            // Escoger una pieza aleatoria de la lista de prefabs
-            ChessPiece prefab = PrefabsPiezas[Random.Range(0, PrefabsPiezas.Count)];
-
-            // Obtener la celda libre en la primera fila correspondiente
-            Celda celda = null;
-            if (isPlayer1)
-            {
-                celda = OpcionesPlayer1.FirstOrDefault(x => x.ocupante == null);
-            }
-            else
-            {
-                celda = OpcionesPlayer2.FirstOrDefault(x => x.ocupante == null);
-            }
-
-            if (celda == null)
-            {
-                Debug.LogWarning("No hay más celdas libres para colocar piezas.");
-                break;
-            }
-
-            // Instanciar la pieza dentro de la celda (para que quede ubicada correctamente)
-            ChessPiece instancia = Instantiate(prefab, celda.transform.position, Quaternion.identity);
-
-            // Actualizar si es jugador 1 o 2 (esto asigna el sprite)
-            instancia.ActualizarPieza(isPlayer1);
-
-            // Registrar la pieza en la celda y posición
-            celda.OcupaCelda(instancia);
-            instancia.posicionActual = new Vector2Int(celda.GetIndiceColumna(), celda.GetIndiceFila());
-        }
-    }
-
+    // Método para instanciar piezas al inicio
     public void GenerarPiezasIniciales(bool esJugador1)
     {
-        
-
         List<Celda> listaDeCeldas = esJugador1 ? OpcionesPlayer1 : OpcionesPlayer2;
 
         for (int i = 0; i < cantidadPiezas; i++)
         {
             ChessPiece prefabRandom = PrefabsPiezas[Random.Range(0, PrefabsPiezas.Count)];
 
-            // Buscamos la primera celda vacía en su respectivo panel
             Celda celdaDisponible = listaDeCeldas.Find(c => c.EstaVacia());
 
             if (celdaDisponible != null)
             {
-                // Instanciamos la pieza
                 ChessPiece nuevaPieza = Instantiate(prefabRandom, celdaDisponible.transform.position, Quaternion.identity);
                 nuevaPieza.transform.SetParent(celdaDisponible.transform);
                 nuevaPieza.ActualizarPieza(esJugador1);
                 celdaDisponible.OcupaCelda(nuevaPieza);
+
+                // Asignar posición actual correctamente
+                nuevaPieza.posicionActual = new Vector2Int(celdaDisponible.GetIndiceColumna(), celdaDisponible.GetIndiceFila());
+
+                if (esJugador1)
+                    piezasJugador1.Add(nuevaPieza);
+                else
+                    piezasJugador2.Add(nuevaPieza);
+            }
+            else
+            {
+                Debug.LogWarning($"No hay más celdas libres para jugador {(esJugador1 ? "1" : "2")}");
+                break;
             }
         }
-
     }
 }

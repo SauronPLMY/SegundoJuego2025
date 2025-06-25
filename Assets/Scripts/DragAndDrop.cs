@@ -18,8 +18,12 @@ public class DragAndDrop : MonoBehaviour
     private void OnMouseDown()
     {
         startPosition = transform.position;
+
         Vector3 mousePos = camara.ScreenToWorldPoint(Input.mousePosition);
         offset = transform.position - new Vector3(mousePos.x, mousePos.y, transform.position.z);
+
+        // Ignorar raycast para no chocar consigo misma
+        gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         estaArrastrando = true;
     }
 
@@ -27,43 +31,32 @@ public class DragAndDrop : MonoBehaviour
     {
         if (!estaArrastrando) return;
 
-        gameObject.layer = 2;
         Vector3 mousePos = camara.ScreenToWorldPoint(Input.mousePosition);
         Vector3 nuevaPos = new Vector3(mousePos.x, mousePos.y, transform.position.z) + offset;
         transform.position = nuevaPos;
     }
 
     private void OnMouseUp()
+{
+    estaArrastrando = false;
+    gameObject.layer = LayerMask.NameToLayer("Default");
+
+    // Dibuja el raycast para ver que se lanza desde la pieza
+    Debug.DrawRay(transform.position, Vector3.forward * 0.1f, Color.red, 2f);
+
+    // Usa raycast sin filtro de Layer, para detectar cualquier cosa
+    RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero);
+
+    if (hit.collider != null)
     {
-        estaArrastrando = false;
-        // Hacemos el raycast 2D hacia abajo desde la posición actual
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero);
-        gameObject.layer = 0;
-
-        Debug.Log(hit.transform.name);
-
-        if (hit.collider != null && hit.collider.TryGetComponent<Celda>(out Celda celda))
-        {
-            int fila = celda.GetIndiceFila();
-
-            // Validamos si es su primera fila según el jugador
-            if ((pieza.esDelJugador1 && fila == 0) || (!pieza.esDelJugador1 && fila == 7))
-            {
-                // Correcto: lo asignamos a la celda
-                transform.position = celda.transform.position;
-                celda.OcupaCelda(pieza);
-                Debug.Log("Pieza colocada correctamente");
-            }
-            else
-            {
-                Debug.Log("Solo puedes colocar la pieza en tu primera fila");
-                transform.position = startPosition;
-            }
-        }
-        else
-        {
-            Debug.Log("No soltaste la pieza sobre ninguna celda");
-            transform.position = startPosition;
-        }
+        Debug.Log("Raycast golpeó: " + hit.collider.name + " (Layer: " + LayerMask.LayerToName(hit.collider.gameObject.layer) + ")");
     }
+    else
+    {
+        Debug.Log("Raycast NO golpeó nada.");
+    }
+
+    // El resto lo puedes dejar comentado por ahora mientras probamos
+}
+
 }
