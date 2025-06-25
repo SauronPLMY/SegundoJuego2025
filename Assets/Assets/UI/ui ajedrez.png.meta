@@ -1,0 +1,867 @@
+fileFormatVersion: 2
+guid: 1a096d34b6c504e4b9843ea91a1b9f0c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 190349643214828427
+    second: ui ajedrez_0
+  - first:
+      213: -7910715460871898136
+    second: ui ajedrez_1
+  - first:
+      213: -6711622597792339261
+    second: ui ajedrez_2
+  - first:
+      213: -8215778878037822343
+    second: ui ajedrez_3
+  - first:
+      213: 2607453999944155984
+    second: ui ajedrez_4
+  - first:
+      213: 2866215655898616292
+    second: ui ajedrez_5
+  - first:
+      213: -6776445693770160528
+    second: ui ajedrez_6
+  - first:
+      213: -645471065911650925
+    second: ui ajedrez_7
+  - first:
+      213: -4779601062251004247
+    second: ui ajedrez_8
+  - first:
+      213: -5320351799044514137
+    second: ui ajedrez_9
+  - first:
+      213: -4391631489180435239
+    second: ui ajedrez_10
+  - first:
+      213: -8829160656497066992
+    second: ui ajedrez_11
+  - first:
+      213: 8673032135161502133
+    second: ui ajedrez_12
+  - first:
+      213: -313399895907079436
+    second: ui ajedrez_13
+  - first:
+      213: 5060319160125303558
+    second: ui ajedrez_14
+  - first:
+      213: 7242977209125880509
+    second: ui ajedrez_15
+  - first:
+      213: 1505605431433717927
+    second: ui ajedrez_16
+  - first:
+      213: -8480281270459462117
+    second: ui ajedrez_17
+  - first:
+      213: -3738903294825810937
+    second: ui ajedrez_18
+  - first:
+      213: 8702638511544441699
+    second: ui ajedrez_19
+  - first:
+      213: 4476044672280976710
+    second: ui ajedrez_20
+  - first:
+      213: -7249497693381679255
+    second: ui ajedrez_21
+  - first:
+      213: -6665549415987603408
+    second: ui ajedrez_22
+  - first:
+      213: -2582174404328014503
+    second: ui ajedrez_23
+  - first:
+      213: -35576389643629700
+    second: ui ajedrez_24
+  - first:
+      213: -3419823686924466708
+    second: ui ajedrez_25
+  - first:
+      213: 3607150260501747349
+    second: ui ajedrez_26
+  - first:
+      213: 7428464427354911250
+    second: ui ajedrez_27
+  - first:
+      213: -1568793694891291969
+    second: ui ajedrez_28
+  - first:
+      213: -38729852042669971
+    second: ui ajedrez_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ui ajedrez_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 356
+        width: 146
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8331f2fdf144a200800000000000000
+      internalID: 190349643214828427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_1
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 356
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eb3a8b733e773290800000000000000
+      internalID: -7910715460871898136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_2
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 356
+        width: 146
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca6a189ec68bd2a0800000000000000
+      internalID: -6711622597792339261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_3
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 356
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 974f565b3a0bbfd80800000000000000
+      internalID: -8215778878037822343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_4
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 299
+        width: 146
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 053c7da19998f2420800000000000000
+      internalID: 2607453999944155984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_5
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 299
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e1108304f7d6c720800000000000000
+      internalID: 2866215655898616292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_6
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 299
+        width: 146
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 076aa1f6b8a35f1a0800000000000000
+      internalID: -6776445693770160528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_7
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 299
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3951b834c73da07f0800000000000000
+      internalID: -645471065911650925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_8
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 241
+        width: 146
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aef27448227badb0800000000000000
+      internalID: -4779601062251004247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_9
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 241
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae57d92a305a26b0800000000000000
+      internalID: -5320351799044514137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_10
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 241
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dcfafead6acd03c0800000000000000
+      internalID: -4391631489180435239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_11
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 241
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01c33ac6925887580800000000000000
+      internalID: -8829160656497066992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_12
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 241
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b959d576cccc5870800000000000000
+      internalID: 8673032135161502133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_13
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 241
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa60d3847496abf0800000000000000
+      internalID: -313399895907079436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_14
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 184
+        width: 147
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60b2f55277dd93640800000000000000
+      internalID: 5060319160125303558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_15
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 184
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db2c2329569348460800000000000000
+      internalID: 7242977209125880509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_16
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 184
+        width: 146
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a86180b92cf4e410800000000000000
+      internalID: 1505605431433717927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_17
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 184
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e8dde6d1dff4a80800000000000000
+      internalID: -8480281270459462117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_18
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 126
+        width: 147
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 704be5e434fbc1cc0800000000000000
+      internalID: -3738903294825810937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_19
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 126
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b9d312e9bf5c870800000000000000
+      internalID: 8702638511544441699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_20
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 126
+        width: 146
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64d56121aea1e1e30800000000000000
+      internalID: 4476044672280976710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_21
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 126
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 967a8f1e14c946b90800000000000000
+      internalID: -7249497693381679255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_22
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 69
+        width: 146
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0381f3b2f163f73a0800000000000000
+      internalID: -6665549415987603408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_23
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 69
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95d3ce96f064a2cd0800000000000000
+      internalID: -2582174404328014503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_24
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 69
+        width: 146
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7b86ec467b918ff0800000000000000
+      internalID: -35576389643629700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_25
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 69
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce5866ac9785a80d0800000000000000
+      internalID: -3419823686924466708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_26
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 11
+        width: 146
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5961aa8ec0c2f0230800000000000000
+      internalID: 3607150260501747349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_27
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 11
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2127d1bf905371760800000000000000
+      internalID: 7428464427354911250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_28
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 11
+        width: 146
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbac12242768a3ae0800000000000000
+      internalID: -1568793694891291969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui ajedrez_29
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 11
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d601bce9767667ff0800000000000000
+      internalID: -38729852042669971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
