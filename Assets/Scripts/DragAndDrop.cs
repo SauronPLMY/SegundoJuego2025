@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
@@ -9,6 +10,10 @@ public class DragAndDrop : MonoBehaviour
     private ChessPiece pieza;
     private Camera camara;
 
+
+    public event Action OnTakePiece;
+    public event Action OnDropPiece;
+
     private void Start()
     {
         pieza = GetComponent<ChessPiece>();
@@ -17,6 +22,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
+        OnTakePiece?.Invoke();
         startPosition = transform.position;
 
         Vector3 mousePos = camara.ScreenToWorldPoint(Input.mousePosition);
@@ -37,26 +43,28 @@ public class DragAndDrop : MonoBehaviour
     }
 
     private void OnMouseUp()
-{
-    estaArrastrando = false;
-    gameObject.layer = LayerMask.NameToLayer("Default");
-
-    // Dibuja el raycast para ver que se lanza desde la pieza
-    Debug.DrawRay(transform.position, Vector3.forward * 0.1f, Color.red, 2f);
-
-    // Usa raycast sin filtro de Layer, para detectar cualquier cosa
-    RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero);
-
-    if (hit.collider != null)
     {
-        Debug.Log("Raycast golpeó: " + hit.collider.name + " (Layer: " + LayerMask.LayerToName(hit.collider.gameObject.layer) + ")");
-    }
-    else
-    {
-        Debug.Log("Raycast NO golpeó nada.");
-    }
+        OnDropPiece?.Invoke();
+        
+        // estaArrastrando = false;
+        // gameObject.layer = LayerMask.NameToLayer("Default");
 
-    // El resto lo puedes dejar comentado por ahora mientras probamos
-}
+        // // Dibuja el raycast para ver que se lanza desde la pieza
+        // Debug.DrawRay(transform.position, Vector3.forward * 0.1f, Color.red, 2f);
+
+        // // Usa raycast sin filtro de Layer, para detectar cualquier cosa
+        // RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero);
+
+        // if (hit.collider != null)
+        // {
+        //     Debug.Log("Raycast golpeó: " + hit.collider.name + " (Layer: " + LayerMask.LayerToName(hit.collider.gameObject.layer) + ")");
+        // }
+        // else
+        // {
+        //     Debug.Log("Raycast NO golpeó nada.");
+        // }
+
+        // // El resto lo puedes dejar comentado por ahora mientras probamos
+    }
 
 }

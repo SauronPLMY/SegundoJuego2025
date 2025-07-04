@@ -16,7 +16,6 @@ public class Celda : MonoBehaviour, IDropHandler
     // Hay una pieza enemiga en la celda?
     public bool TienePiezaEnemiga(bool soyJugador1)
     {
-       
         return false;
     }
 

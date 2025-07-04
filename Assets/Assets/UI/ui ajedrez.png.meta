@@ -859,7 +859,37 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ui ajedrez_0: 190349643214828427
+      ui ajedrez_1: -7910715460871898136
+      ui ajedrez_10: -4391631489180435239
+      ui ajedrez_11: -8829160656497066992
+      ui ajedrez_12: 8673032135161502133
+      ui ajedrez_13: -313399895907079436
+      ui ajedrez_14: 5060319160125303558
+      ui ajedrez_15: 7242977209125880509
+      ui ajedrez_16: 1505605431433717927
+      ui ajedrez_17: -8480281270459462117
+      ui ajedrez_18: -3738903294825810937
+      ui ajedrez_19: 8702638511544441699
+      ui ajedrez_2: -6711622597792339261
+      ui ajedrez_20: 4476044672280976710
+      ui ajedrez_21: -7249497693381679255
+      ui ajedrez_22: -6665549415987603408
+      ui ajedrez_23: -2582174404328014503
+      ui ajedrez_24: -35576389643629700
+      ui ajedrez_25: -3419823686924466708
+      ui ajedrez_26: 3607150260501747349
+      ui ajedrez_27: 7428464427354911250
+      ui ajedrez_28: -1568793694891291969
+      ui ajedrez_29: -38729852042669971
+      ui ajedrez_3: -8215778878037822343
+      ui ajedrez_4: 2607453999944155984
+      ui ajedrez_5: 2866215655898616292
+      ui ajedrez_6: -6776445693770160528
+      ui ajedrez_7: -645471065911650925
+      ui ajedrez_8: -4779601062251004247
+      ui ajedrez_9: -5320351799044514137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

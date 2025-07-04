@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Jugador2
   - Jugador1
+  - Celda
   layers:
   - Default
   - TransparentFX
