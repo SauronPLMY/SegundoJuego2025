@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 8223932643340204919}
   - component: {fileID: 384557981243475100}
   - component: {fileID: 3459432673735410868}
-  - component: {fileID: -1777602006174788990}
-  - component: {fileID: -8785697948268832056}
   - component: {fileID: -6291848603801782011}
+  - component: {fileID: 7865630415522800318}
   m_Layer: 0
   m_Name: Caballo
   m_TagString: Player
@@ -128,37 +127,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.1, y: 0.1}
   m_Direction: 0
---- !u!114 &-1777602006174788990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8550251692242029182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eef33149efe23e4e82289172685926e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_canTake: 1
---- !u!114 &-8785697948268832056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8550251692242029182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b307177949ac234894c35dd5c666977, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_type: 1
-  m_dir: 0
-  m_controller: {fileID: -1777602006174788990}
-  m_celda: {fileID: 0}
-  m_isStarted: 0
-  m_rendered: {fileID: 0}
 --- !u!50 &-6291848603801782011
 Rigidbody2D:
   serializedVersion: 5
@@ -186,3 +154,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7865630415522800318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550251692242029182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2cd2fb173578d4c9b0c06cf7821f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipo: 1

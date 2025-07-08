@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 3196440467950718094}
   - component: {fileID: 1982881484371770110}
   - component: {fileID: 8402981620861564060}
-  - component: {fileID: 4115595565806170561}
-  - component: {fileID: 8429374528003751628}
   - component: {fileID: 3425460013986216991}
+  - component: {fileID: 8261478147260101744}
   m_Layer: 0
   m_Name: Reina
   m_TagString: Player
@@ -128,37 +127,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.1, y: 0.1}
   m_Direction: 0
---- !u!114 &4115595565806170561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6501378406454295670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eef33149efe23e4e82289172685926e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_canTake: 1
---- !u!114 &8429374528003751628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6501378406454295670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ded772eddb4695c4fb0ca6f37a0f8836, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_type: 2
-  m_dir: 0
-  m_controller: {fileID: 4115595565806170561}
-  m_celda: {fileID: 0}
-  m_isStarted: 0
-  m_rendered: {fileID: 0}
 --- !u!50 &3425460013986216991
 Rigidbody2D:
   serializedVersion: 5
@@ -186,3 +154,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8261478147260101744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501378406454295670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2cd2fb173578d4c9b0c06cf7821f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipo: 4

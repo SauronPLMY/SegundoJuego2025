@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 2361966124710235453}
   - component: {fileID: 2881368173436999172}
   - component: {fileID: -5435420385476058797}
-  - component: {fileID: -1322893603202731784}
-  - component: {fileID: 7141907239216251156}
   - component: {fileID: -1523075881910835067}
+  - component: {fileID: 1798712593383723200}
   m_Layer: 0
   m_Name: Torre
   m_TagString: Player
@@ -128,37 +127,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.1, y: 0.1}
   m_Direction: 0
---- !u!114 &-1322893603202731784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5183447797231666337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eef33149efe23e4e82289172685926e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_canTake: 1
---- !u!114 &7141907239216251156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5183447797231666337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7d8ab7fa193192469c4dfb5536584e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_type: 4
-  m_dir: 0
-  m_controller: {fileID: -1322893603202731784}
-  m_celda: {fileID: 0}
-  m_isStarted: 0
-  m_rendered: {fileID: 0}
 --- !u!50 &-1523075881910835067
 Rigidbody2D:
   serializedVersion: 5
@@ -186,3 +154,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1798712593383723200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5183447797231666337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2cd2fb173578d4c9b0c06cf7821f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipo: 3

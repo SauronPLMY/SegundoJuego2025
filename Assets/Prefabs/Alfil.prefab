@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 8430367709041348962}
   - component: {fileID: 3209954586742561904}
   - component: {fileID: 4741321439341577329}
-  - component: {fileID: 2563281946757649937}
-  - component: {fileID: -8062177511453378384}
   - component: {fileID: -148515276962713949}
+  - component: {fileID: 6175353501942041026}
   m_Layer: 0
   m_Name: Alfil
   m_TagString: Player
@@ -128,37 +127,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.1, y: 0.1}
   m_Direction: 0
---- !u!114 &2563281946757649937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669147804923768718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eef33149efe23e4e82289172685926e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_canTake: 1
---- !u!114 &-8062177511453378384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669147804923768718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62d0658ceebcea44abe73ffd317ea143, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_type: 3
-  m_dir: 0
-  m_controller: {fileID: 2563281946757649937}
-  m_celda: {fileID: 0}
-  m_isStarted: 0
-  m_rendered: {fileID: 0}
 --- !u!50 &-148515276962713949
 Rigidbody2D:
   serializedVersion: 5
@@ -186,3 +154,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6175353501942041026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669147804923768718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2cd2fb173578d4c9b0c06cf7821f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipo: 2

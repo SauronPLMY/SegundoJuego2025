@@ -6,52 +6,127 @@ public class Tablero : MonoBehaviour
 {
     public static Tablero Instance;
 
-    public List<SO_Pieces> m_piecesSO;
+    public int filas = 8;
+    public int columnas = 8;
+    public float tamañoCasilla = 1f;
+    public Vector2 origenTablero = new Vector2(-3.5f, -3.5f);
 
-    public Jugador1 m_jugador1;
-    public Jugador2 m_jugador2;
-    public ColumnasManager m_columnasManager;
+    public GameObject[,] tablero = new GameObject[8,8];
 
-    public List<Pieza> m_leftPiecesOnPlay;
-    public List<Pieza> m_rightPiecesOnPlay;
+    public Vector2Int meta;
 
-    void Awake() => Instance = this;
-
-    void Start()
+    private void Awake()
     {
-        m_jugador1.m_pieces.Where(c => c.m_dir == 1).ToList().ForEach(z => z.OnPlay += Player1Played);
-        m_jugador2.m_pieces.Where(c => c.m_dir == -1).ToList().ForEach(z => z.OnPlay += Player2Played);
+        Instance = this;
     }
 
-    void OnDisable()
+    public Vector2Int GetCasillaDesdePosicion(Vector2 posicion)
     {
-        m_jugador1.m_pieces.Where(c => c.m_dir == 1).ToList().ForEach(z => z.OnPlay -= Player1Played);
-        m_jugador2.m_pieces.Where(c => c.m_dir == -1).ToList().ForEach(z => z.OnPlay -= Player2Played);
+        int x = Mathf.FloorToInt((posicion.x - origenTablero.x) / tamañoCasilla);
+        int y = Mathf.FloorToInt((posicion.y - origenTablero.y) / tamañoCasilla);
+        return new Vector2Int(x, y);
     }
 
-    void Player1Played()
+    public Vector3 GetPosicionDesdeCasilla(Vector2Int casilla)
     {
-        Debug.Log("Jugó player 1");
+        float x = origenTablero.x + casilla.x * tamañoCasilla + tamañoCasilla / 2;
+        float y = origenTablero.y + casilla.y * tamañoCasilla + tamañoCasilla / 2;
+        return new Vector3(x, y, 0);
+    }
 
-        if (m_rightPiecesOnPlay != null)
+    public bool EsMovimientoValido(Vector2 posicionActual, Vector2Int destino, TipoPieza tipo)
+    {
+        Vector2Int origen = GetCasillaDesdePosicion(posicionActual);
+
+        int dx = destino.x - origen.x;
+        int dy = destino.y - origen.y;
+
+        switch (tipo)
         {
-            m_rightPiecesOnPlay.ForEach(c => c.Move());
+            case TipoPieza.Peon:
+                return dx == 0 && dy == 1;
+            case TipoPieza.Caballo:
+                return (Mathf.Abs(dx) == 1 && Mathf.Abs(dy) == 2) || (Mathf.Abs(dx) == 2 && Mathf.Abs(dy) == 1);
+            case TipoPieza.Alfil:
+                return Mathf.Abs(dx) == Mathf.Abs(dy);
+            case TipoPieza.Torre:
+                return dx == 0 || dy == 0;
+            case TipoPieza.Reina:
+                return dx == 0 || dy == 0 || Mathf.Abs(dx) == Mathf.Abs(dy);
         }
-
-        m_jugador1.m_pieces.ForEach(c => c.m_controller.m_canTake = false);
-        m_jugador2.m_pieces.ForEach(c => c.m_controller.m_canTake = true);
+        return false;
     }
 
-    void Player2Played()
+    public bool CasillaAmenazada(Vector2Int casilla)
     {
-        Debug.Log("Jugó player 2");
-
-        if (m_leftPiecesOnPlay != null)
+        for (int x = 0; x < filas; x++)
         {
-            m_leftPiecesOnPlay.ForEach(c => c.Move());
+            for (int y = 0; y < columnas; y++)
+            {
+                GameObject piezaEnemiga = tablero[x, y];
+                if (piezaEnemiga != null)
+                {
+                    TipoPieza tipo = piezaEnemiga.GetComponent<Pieza>().tipo;
+                    Vector2Int posPieza = new Vector2Int(x, y);
+                    if (AmenazaDesde(posPieza, casilla, tipo))
+                        return true;
+                }
+            }
         }
+        return false;
+    }
 
-        m_jugador1.m_pieces.ForEach(c => c.m_controller.m_canTake = true);
-        m_jugador2.m_pieces.ForEach(c => c.m_controller.m_canTake = false);
+    private bool AmenazaDesde(Vector2Int origen, Vector2Int destino, TipoPieza tipo)
+    {
+        int dx = destino.x - origen.x;
+        int dy = destino.y - origen.y;
+
+        switch (tipo)
+        {
+            case TipoPieza.Peon:
+                return (Mathf.Abs(dx) == 1 && dy == 1); // Peón amenaza diagonal adelante
+            case TipoPieza.Caballo:
+                return (Mathf.Abs(dx) == 1 && Mathf.Abs(dy) == 2) || (Mathf.Abs(dx) == 2 && Mathf.Abs(dy) == 1);
+            case TipoPieza.Alfil:
+                if (Mathf.Abs(dx) == Mathf.Abs(dy))
+                    return !HayObstaculoEntre(origen, destino);
+                return false;
+            case TipoPieza.Torre:
+                if (dx == 0 || dy == 0)
+                    return !HayObstaculoEntre(origen, destino);
+                return false;
+            case TipoPieza.Reina:
+                if (dx == 0 || dy == 0 || Mathf.Abs(dx) == Mathf.Abs(dy))
+                    return !HayObstaculoEntre(origen, destino);
+                return false;
+        }
+        return false;
+    }
+
+    private bool HayObstaculoEntre(Vector2Int origen, Vector2Int destino)
+    {
+        int dx = destino.x - origen.x;
+        int dy = destino.y - origen.y;
+
+        int stepX = dx == 0 ? 0 : dx / Mathf.Abs(dx);
+        int stepY = dy == 0 ? 0 : dy / Mathf.Abs(dy);
+
+        int x = origen.x + stepX;
+        int y = origen.y + stepY;
+
+        while (x != destino.x || y != destino.y)
+        {
+            if (tablero[x, y] != null)
+                return true;
+
+            x += stepX;
+            y += stepY;
+        }
+        return false;
+    }
+
+    public bool EsCasillaMeta(Vector2Int casilla)
+    {
+        return casilla == meta;
     }
 }
